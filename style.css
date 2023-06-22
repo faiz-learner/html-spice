@@ -217,7 +217,7 @@ body{
 .show-image{
     width: 100vw;
     height: fit-content;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.584),rgba(13, 24, 13, 0.694)),url(/Flex-Project/images/pexels-karolina-grabowska-4871160.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.584),rgba(13, 24, 13, 0.694)),url(./images/pexels-karolina-grabowska-4871160.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
