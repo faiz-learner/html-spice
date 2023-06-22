@@ -1,0 +1,764 @@
+/* General Settings of website */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&family=Poppins:wght@100;200;300;400&display=swap');
+
+/* Logo font */
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Noto+Sans:wght@100&family=Poppins:wght@100;200;300;400&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+body{
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+/* ################### UTILITY CLASS ##################### */
+.a-button{
+    text-decoration: none;
+    padding: .5rem;
+    background-color: rgba(0, 0, 128, 0.561);
+    font-size: 1.5rem;
+    color: white;
+    border-radius: 5px;
+    letter-spacing: .1rem;
+}
+.bottom-margin{
+    margin-bottom: .5rem;
+}
+
+/******************* Desktop Designing ********************/
+
+/* hamberger menu checkbox and line styling elements hided */
+.nav-container input[type="checkbox"]{
+    display: none;
+}
+.line-container{
+   display: none;
+}
+
+
+/*********************** Nav bar complete designing  ********************/
+/*************************************** navbar desktop design *****************************************/
+.navbar{
+    background-color: rgba(255, 255, 255, 0.773);
+    position:fixed;
+    box-shadow: 3px 3px 10px black;
+    width: 100vw;
+    height: fit-content;
+    z-index: 10;
+}
+.nav-container{
+    margin:0 auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    /* border: 2px solid black; */
+}
+.menu{
+    order: 1;
+}
+.menu ul{
+    display: flex;
+    list-style:none;
+    justify-content: space-around;
+}
+.menu ul li a{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.7rem;
+    color: navy;
+}
+.menu ul li {
+   margin-right: 2rem;
+}
+
+/**************** Logo design *********************/
+.logo span{
+    order: 0;
+    letter-spacing: 2.3rem;
+}
+.logo p{
+    letter-spacing: .2rem;
+}
+.logo .f{
+    font-size: 5rem;
+    font-weight: 900;
+    font-family: 'Fredericka the Great';
+}
+.logo .j{
+    font-size: 3rem;
+    font-weight: 900;
+    font-family: 'Fredericka the Great';
+}
+.logo .a{
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: 'Fredericka the Great';
+}
+.logo .f{
+    background-color: rgba(132, 255, 0, 0.726);
+}
+.logo .a{
+    background-color: burlywood;
+}
+.logo .j{
+    background-color: rgba(0, 0, 139, 0.559);
+}
+/************************************** Media Query Navbar Responsive **********************************************/
+
+@media screen and (max-width:900px){
+    .menu{
+        position: absolute;
+        left: 1%;
+        top: 10%;
+        width: fit-content;
+        height: 98vh;
+        padding-bottom: 1rem;
+        background-color: rgba(0, 0, 128, 0.416);
+        transform: translateX(-110%);
+        border-radius: 10px;
+        z-index: 1;
+        transition: transform 1s;
+    }
+    .menu ul{
+        flex-direction: column;
+        margin-top: 4rem;
+        margin-left: 2rem; 
+    }
+    .menu ul li a{
+       color: white;
+       letter-spacing: .2rem;
+    }
+    .nav-container input[type="checkbox"]{
+       display: inline-block;
+       position: absolute;
+       left: 2.5%;
+       top: 18%;
+       width: 20px;
+       height: 20px;
+       z-index: 3;
+       opacity: 0;
+    }
+    .line-container{
+       display: flex;
+       flex-direction: column;
+       position: absolute;
+       left: 2%;
+       top: 18%;
+       z-index: 2;
+    }
+    .line-container .line{
+        width: 30px;
+        height: 1px;
+        background-color: black;
+        margin-bottom: 1rem;
+    }
+    .line-container .line1{
+        transform-origin: 0% 0%;
+        transition: all 1s ease-in-out;
+    }
+    .line-container .line3{
+        transform-origin: 0% 110%;
+        transition: all 1s ease-in-out;
+    }
+    .nav-container input[type="checkbox"]:checked ~ .menu{
+        transform: translateX(0%);
+    }
+    .nav-container input[type="checkbox"]:checked ~ .line-container .line1{
+        transform: rotate(45deg); 
+    }
+    .nav-container input[type="checkbox"]:checked ~ .line-container .line2{
+        visibility: hidden;
+    }
+    .nav-container input[type="checkbox"]:checked ~ .line-container .line3{
+        transform: rotate(-45deg);
+    }
+    .nav-container input[type="checkbox"]:checked ~ .line-container .line{
+        background-color: white; 
+    }
+}
+@media screen and (max-width:900px) and (orientation:landscape) {
+    .logo{
+        margin-top:.5rem ;
+    }
+    .line-container{
+        left: 2%;
+        top: 30%;
+     }
+     .nav-container input[type="checkbox"]{
+        left: 2.5%;
+        top: 31%;
+        opacity: 0;
+     }
+}
+@media screen and (max-width:500px){
+    .line-container{
+        left: 2%;
+        top: 34%;
+     }
+     .nav-container input[type="checkbox"]{
+        left: 3%;
+        top: 35%;
+        opacity: 0;
+     }
+}
+
+
+
+/* ********************Image and explore button design area ****************************/
+.show-image{
+    width: 100vw;
+    height: fit-content;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.584),rgba(13, 24, 13, 0.694)),url(/Flex-Project/images/pexels-karolina-grabowska-4871160.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0;
+    /* background-clip: border-box; */
+}
+.image{
+    border: 2px solid white;
+    padding: 1rem;
+    margin-top: 7rem;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0.529);
+    box-shadow: 3px 3px 3px black;
+    color: navy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.image h2{
+    font-size: 2.5rem;
+}
+.image p{
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+
+/******************************* About us designing **************************/
+.about-showcase{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem auto;
+    /* border: 2px solid blue; */
+}
+.about-content h4{
+    font-size: 1.6rem;
+}
+.about-content h2{
+    font-size: 2rem;
+}
+.about-content p{
+    font-size: 1.3rem;
+}
+.about-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+    width: 35vw;
+    transform: translateX(-150%);
+    /* border: 2px solid black; */
+    animation: aboutus-animation 2s ease-in-out forwards;
+}
+.about-image{
+    height: 30rem;
+    width: 30rem;
+    /* background-image: linear-gradient(rgba(19, 14, 14, 0),rgba(8, 7, 7, 0)),url(/Flex-Project/images/anna-pelzer-IGfIGP5ONV0-unsplash.jpg); */
+   /* border: 2px solid black; */
+    transform: translateX(150%);
+    animation: aboutus-animation 2s ease-in-out forwards;
+}
+.about-image img{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    object-fit: cover;
+    object-position: center;
+}
+@keyframes aboutus-animation{
+    100%{
+        transform: translateX(0);
+    }
+}
+
+/*********************************** Media Query About us design responsive *****************************/
+
+@media screen and (max-width:850px) {
+    .about-showcase{
+      flex-direction: column;
+    }
+    .about-content{
+        align-items: center;
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+    .about-image{ 
+        width: 80%;
+    } 
+}
+@media screen and (max-width:500px) {
+    .about-content{
+        align-items: center;
+        width: 99%;
+        /* border: 2px solid black; */
+    }
+    .about-content h2{
+      text-align: center;
+    }
+    .about-content p{
+        text-align: center;
+      }
+    .about-image{ 
+        width: 98%;
+    } 
+}
+
+
+/******************************* Types of spice Designing *******************************/
+
+.spice-type-showcase{
+    text-align: center;
+    margin: 6rem auto;
+}
+.spice-type-showcase h2{
+    font-size: 2.5rem;
+}
+.spice-container{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 65vw;
+    margin: 3rem auto;   
+}
+.spice-cmmn{
+    height: 30rem;
+    width: 20vw;
+    position: relative;
+}
+.spice-sub-cmmn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    transition: all .5s;
+    opacity: 0;
+    background-color: rgb(0, 0, 0);
+}
+.spice-sub-cmmn a{
+    text-decoration: none;
+    display: inline-block;
+    padding: .7rem;
+    background-color: rgba(150, 146, 146, 0.786);
+    color: black;
+    margin-top: .7rem;
+    border-radius: 10px;
+}
+.spice-sub-cmmn h2{
+    color: white;
+}
+.spice-cmmn:hover .spice-sub-cmmn{
+    width: 100%;
+    height: 100%;
+    opacity: 1;  
+}
+
+.spice-cmmn img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/*********************************** Media Query types of spices design responsive *****************************/
+
+@media screen and (max-width:850px) {
+    .spice-cmmn{
+        height: 20rem;
+    }
+    .spice-type-showcase h2{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width:500px) {
+    .spice-cmmn{
+        height: 10rem;
+    }
+    .spice-type-showcase h2{
+        font-size: 1rem;
+    }
+    
+}
+
+/* *********************Food Items menu list designing *****************************/
+
+.food-items-showcase{
+    width: 100vw;
+}
+.food-items-showcase h2{
+    font-size: 2.5rem;
+    text-align: center;
+  
+}
+.fi-image{
+    height: 25vh;
+    width: 15vw;
+    border-radius: 50%;
+    /* border: 2px solid black; */
+    
+}
+.fi-image img{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+.food-items-container{
+    margin: 0rem auto;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    max-width: 90vw;
+    
+}
+.fic-commn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 2rem; 
+    /* border: 2px solid black; */
+}
+.fid-commn{
+    width: 15.5vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-left: 1rem;
+    /* border: 2px solid black; */
+}
+.fid-commn h3{
+    font-size: 2rem;
+}
+.fid-commn a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color:navy
+    
+}
+/*********************************** Media Query items menu design responsive *****************************/ 
+
+@media screen and (max-width:950px) {
+    .food-items-container{
+       flex-direction: column; 
+    }
+    .fic-commn{
+       
+        flex-direction: column;
+        margin: 2rem 2rem; 
+        
+    }
+    .fid-commn{
+        align-items: center;
+        width: 100%
+    }
+    .fi-image{
+        height: 50%;
+        width: 50%;
+        border-radius: 0%;
+    }
+    .fi-image img{
+       border-radius: 70%;
+    }
+}
+
+
+/********************************* Testimonial designing *********************************/
+
+.testmo-showcase{
+    margin-top: 4rem;
+    width: 100vw;
+    text-align: center;
+    background-color: rgba(0, 0, 128, 0.55);
+    padding: 2rem 0 1.5rem 0;
+    /* border: solid 2px black; */
+
+}
+.testmo-showcase h2{
+    font-size: 2.5rem;
+    color: white;
+  
+
+}
+.testmo-container{
+    margin: 2rem auto;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid blue; */
+}
+.testmo-image{
+    height: 15vh;
+    width: 8vw;
+    
+    /* border: 2px solid black; */
+}
+.testmo-image img{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position:center;
+    border-radius: 50%;
+}
+.testmo-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.testmo-content h4{
+   font-size: 1.3rem;
+   color: white;
+}
+.testmo-content p{
+    font-size: 1rem;
+    color: white;
+ }
+.testmo-content span{
+    color:gold;
+ }
+.testmo-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.top-margin{
+    margin-top: 2rem;
+}
+
+/*********************************** Media Query Testimonial design responsive *****************************/
+
+@media screen and (max-width:1050px) and (orientation:landscape) {
+    
+    .testmo-image{
+        height: 15vh;
+        width: 12vw;
+    }
+   
+}
+@media screen and (max-width:950px) {
+    .testmo-container{
+        width: 80vw;
+        flex-wrap: wrap;
+        align-items: center;
+        /* border: 2px solid blue; */
+    }
+    .testmo-content{
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2.5rem;
+        /* border: 2px solid blue; */
+    }
+    .testmo-detail{
+        justify-content: center;
+        align-items: center;
+    }
+    .testmo-image{
+        height: 10vh;
+        width: 13vw;
+    }
+    .testmo-content p{
+        font-size: 1.2rem;
+        width: 50%;
+     }
+     .testmo-showcase h2{
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width:950px) and (orientation:landscape) {
+    .testmo-image{
+        height: 20vh;
+        width: 10vw;
+    }
+}
+@media screen and (max-width:450px) {
+    .testmo-container{ 
+        width: 100%;
+    }
+    .testmo-content{
+        width: 100%;
+    }
+    .testmo-image{
+        height: 10vh;
+        width: 20vw;
+    }
+    .testmo-content p{
+        font-size: 1.5rem;
+        width: 70%;
+     }
+     .testmo-showcase h2{
+        font-size: 2rem;
+     }
+}
+
+/********************** Contact us designing*************** */
+.contactus-showcase{
+    text-align: center;
+    padding: 4rem;
+    background-color: rgba(1, 1, 147, 0.65);
+    /* background-color: rgba(41, 41, 105, 0.65); */
+    /* border: 2px solid blue; */ 
+}
+.contactus-showcase h2{
+    font-size: 2.5rem;
+    color: white;
+  }
+/* .first-ball{
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(rgba(77, 77, 152, 0.65),rgba(41, 41, 105, 0.65));
+    border-radius: 50%;
+    box-shadow: -1px 1px 3px 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    
+    animation: firstball 10s ease-in-out infinite;
+}  
+@keyframes firstball{
+    0%{top: 0;left: 0;}
+    25%{top:40%;left:46%;}
+    50%{top:80%;left:92%;}
+    75%{top:40%;left:46%;}
+    100%{top:0%;left:0%;}
+
+}
+.second-ball{
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(rgba(77, 77, 152, 0.65),rgba(41, 41, 105, 0.65));
+    border-radius: 50%;
+    box-shadow: -1px 1px 3px 3px;
+    position: absolute;
+    top: 80%;
+    left:0% ;
+    z-index: -1;
+    animation: secondball 10s ease-in-out infinite;
+    animation-fill-mode: forwards;
+} 
+@keyframes secondball{
+    0%{top: 80%;left: 0%;}
+    25%{top:46%;left:40%;}
+    50%{top:0%;left:92%;}
+    75%{top:46%;left:40%;}
+    100%{top:80%;left:0%;}
+} */
+.contactus-container{
+    width: 40vw;
+    /* border: 2px solid black; */
+    margin: 2rem auto;
+}
+.contact-form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* z-index: 3; */
+}
+.contact-form .contact-items{
+    height: 4rem;
+    margin-bottom: 1rem;
+    color: white;
+    border: none;
+    outline: none;
+    background-color: rgba(1, 1, 147, 0);
+    border-bottom: 2px solid black;
+    transition: font-size 1s;
+}
+.contact-form textarea{
+    resize: none;
+    border: none;
+    background-color: rgba(1, 1, 147, 0);
+    border-bottom: 2px solid black;
+    outline: none;
+    margin-bottom: 1rem;
+    transition: font-size 1s;
+}
+.contact-form .contact-submit{
+    height: 4rem;
+    background-color: rgba(1, 1, 147, 0.427);
+    color: white;
+    margin-bottom: 1rem;
+}
+::placeholder{
+    color: rgba(255, 255, 255, 0.488);
+}
+.contact-items:focus{
+    font-size: 2rem;
+}
+/*********************************** Media Query Contact-us design responsive *****************************/
+@media screen and (max-width:450px) {
+    .contactus-container{
+        width: 100%;
+    }
+}
+
+/******************** footer designing**************** */
+
+.footer-showcase{
+    height: 8rem;
+    background-color: navy;
+    color: white;
+}
+.footer-showcase h3{
+    text-align: center;
+    width: fit-content;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.3rem;
+    color: white; 
+}
+/*********************************** Media Query Contact-us design responsive *****************************/
+@media screen and (max-width:300px) {
+    .footer-showcase h3{
+        font-size: 1rem;   
+      }
+}
+
+
+
+
+
+
+
